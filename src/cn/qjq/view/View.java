@@ -39,19 +39,31 @@ public class View {
         System.out.println("**********\t2.删除学生信息\t***********");
         System.out.println("**********\t3.修改学生信息\t***********");
         System.out.println("**********\t4.查询学生信息\t***********");
-        boolean flag = true;
-        int num = -1;
-        while(flag){
-            //转换为整型，这里只能使用nextLine，不能使用nextInt，否则会直接跳转到下一个输入
-            num = Integer.parseInt(input.nextLine());
-            if (num >= 0 && num <= 4) {
-                flag = false;//退出循环
-                break;
-            }
-            System.out.println("输入错误，请重新输入：");
-        }
-        System.out.println("***********************************");
-        return num;
+//         boolean flag = true;
+//         int num = -1;
+//         while(flag){
+//             //转换为整型，这里只能使用nextLine，不能使用nextInt，否则会直接跳转到下一个输入
+//             num = Integer.parseInt(input.nextLine());
+//             if (num >= 0 && num <= 4) {
+//                 flag = false;//退出循环
+//                 break;
+//             }
+//             System.out.println("输入错误，请重新输入：");
+//         }
+//         System.out.println("***********************************");
+//         return num;
+        方式二：
+             int num = -1;
+		 num = Integer.parseInt(input.nextLine());
+		 while (num < 1 || num > 4) {
+			 if(num==0){
+				 break;
+			 }
+		 System.out.println("输入错误，请重新输入");
+		 managerMenuView();
+		 }
+		 System.out.println("**********************************");
+		 return num;
     }
 
     /**
